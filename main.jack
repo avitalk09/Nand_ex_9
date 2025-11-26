@@ -13,8 +13,10 @@ class main {
         let graphic = Graphic.new();
         let game = RPSGame.new(graphic);
 
+        do game.run();
+
         // Start the game 
-        do game.WhoIsTheWinner();
+        do game.AnnounceWinner();
 
         do game.dispose();
 

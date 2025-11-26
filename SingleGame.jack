@@ -49,13 +49,13 @@ class SingleGame{
         return choice;
     }
 
-    method int GameResult () {
+    method int GameResult (int userChoice) {
         //for  user win it will return 1 for draw 0 and for CP win -1 
         var int result;
 
         //the choice of each one of the players
-        let userChoice = getUserChoiceInput();
-        if (userChoice = -1)  { return 99; } // if the value is illegal
+        //let userChoice = getUserChoiceInput();
+        //if (userChoice = -1)  { return 99; } // if the value is illegal
         let computerChoice = Random.getRandom(3);  //choose randomly from 1-3 RPS
 
         //draw

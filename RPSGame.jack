@@ -8,6 +8,8 @@ class RPSGame {
     field Graphic GameGraphic;
     field SingleGame singleGame;
 
+    static int KEY_Q;  // ASCII 81nv vagah,
+
     constructor RPSGame new(Graphic Graphic ){
         let UserScore = 0;
         let ComputerScore = 0;
@@ -24,35 +26,78 @@ class RPSGame {
         return;
     }
     //complete the round until someone get to 3 points
-    method void WhoIsTheWinner () {
-    var int round_result;
-        while((UserScore<3)&(ComputerScore<3)){
+  
 
+    method void run() {
+        var char key;
+        var boolean exitGame;
+
+        let KEY_Q = 81; // ASCII Q
+        let exitGame = false;
+        let key = 0; //default situation
+
+        while (~exitGame) {
             
-            let round_result = singleGame.GameResult();
+            while(key=0){
+                //check if something was pressed
+                let key = Keyboard.keyPressed();
 
-            // enter the result of a single game to the final score
-            if (round_result = 1)  
-            {let UserScore = UserScore + 1;
-            do GameGraphic.Plus1User(); }
-            if (round_result = -1)  { 
-            let ComputerScore = ComputerScore + 1;
-            do  GameGraphic.Plus1Computer(); }
+                 // chek if someone sacored 3 points
+                if ((UserScore = 3) | (ComputerScore = 3)) { 
+                let exitGame = true;
+            }
+            do Sys.wait(50); //  little pause
+            }
 
-            do Sys.wait(1000); // to delay the times between rounds
+            if(key = KEY_Q){
+                let exitGame = true;
+            }
+            if ((key > 48) & (key < 52)) {  // 49='1', 50='2', 51='3' 
+                do HandleRPSInput(key);
+            } 
+
+            while (~(key = 0)) {
+            let key = Keyboard.keyPressed();
+            do Sys.wait(50);
+            }
+
         }
-
-        if(UserScore = 3){
-            do GameGraphic.UserWon();
-            do Sys.wait(3000);
-        }    
-        else{
-            do GameGraphic.ComputerWon();
-            do Sys.wait(3000);
-        }
+        //anounfds the winner of the game
+        do AnnounceWinner();
         return;
+    }
+
+    method void HandleRPSInput(char keyPressed) {
+
+    var int round_result;
+
+    if ((UserScore = 3) | (ComputerScore = 3)) { return; } // the game is already over
+
+    let round_result = singleGame.GameResult(keyPressed - 48); ///////////////////////////////////////////////////////////////////////////
+
+    if (round_result = 1) { 
+        let UserScore = UserScore + 1;
+        do GameGraphic.Plus1User(); 
+    }
+    if (round_result = -1) { 
+        let ComputerScore = ComputerScore + 1;
+        do GameGraphic.Plus1Computer(); 
+    }
+    do Sys.wait(888);
+    return;
 
     }
+
+    method void AnnounceWinner(){
+
+        if(UserScore = 3){ do GameGraphic.UserWon();}
+        else  { do GameGraphic.ComputerWon(); }
+
+        do ys.wait(3500);
+        return;
+    }
+
+
 
 
  
