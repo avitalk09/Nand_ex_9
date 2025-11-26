@@ -1,0 +1,23 @@
+class main {
+    // attributes and methods
+
+    function void main() {
+        var Graphic graphic;
+        var RPSGame game;
+
+
+        // 
+        do Random.init();
+
+        // Create the objects
+        let graphic = Graphic.new();
+        let game = RPSGame.new(graphic);
+
+        // Start the game 
+        do game.WhoIsTheWinner();
+
+        do game.dispose();
+
+        return;
+    }
+}

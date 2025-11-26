@@ -15,6 +15,13 @@ class RPSGame {
         let singleGame = SingleGame.new(Graphic);
         return this;
 
+
+    }
+    method void dispose () {
+        do GameGraphic.dispose();
+        do singleGame.dispose();
+        do Memory.deAlloc(this);
+        return;
     }
     //complete the round until someone get to 3 points
     method void WhoIsTheWinner () {

@@ -26,6 +26,13 @@ class SingleGame{
         //let randSeed = 100; 
         return this;
     }
+
+    method void dispose () {
+        do gameGraphic.dispose();
+        do Memory.deAlloc(this);
+        return;
+
+    }
     method int getUserChoiceInput() {
         // get choised of the user using the KB
         var char inputChar;
