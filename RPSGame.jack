@@ -1,0 +1,52 @@
+
+
+class RPSGame {
+    // attributes and methods
+
+    field int UserScore;
+    field int ComputerScore;
+    field Graphic GameGraphic;
+    field SingleGame singleGame;
+
+    constructor RPSGame new(Graphic Graphic ){
+        let UserScore = 0;
+        let ComputerScore = 0;
+        let GameGraphic = Graphic;
+        let singleGame = SingleGame.new(Graphic);
+        return this;
+
+    }
+    //complete the round until someone get to 3 points
+    method void WhoIsTheWinner () {
+    var int round_result;
+        while((UserScore<3)&(ComputerScore<3)){
+
+            
+            let round_result = singleGame.GameResult();
+
+            // enter the result of a single game to the final score
+            if (round_result = 1)  
+            {let UserScore = UserScore + 1;
+            do GameGraphic.Plus1User(); }
+            if (round_result = -1)  { 
+            let ComputerScore = ComputerScore + 1;
+            do  GameGraphic.Plus1Computer(); }
+
+            do Sys.wait(1000); // to delay the times between rounds
+        }
+
+        if(UserScore = 3){
+            do GameGraphic.UserWon();
+            do Sys.wait(3000);
+        }    
+        else{
+            do GameGraphic.ComputerWon();
+            do Sys.wait(3000);
+        }
+        return;
+
+    }
+
+
+ 
+}

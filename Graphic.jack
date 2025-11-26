@@ -1,0 +1,19 @@
+class Graphic {
+
+
+constructor Graphic new(){
+       
+        return this;
+        }
+
+method void drawHand (int userChoice,int UserSide) {
+    // code
+    return;
+}
+method void Plus1User() { return; }
+    method void Plus1Computer() { return; }
+    method void UserWon() { return; }
+    method void ComputerWon() { return; }
+
+
+}

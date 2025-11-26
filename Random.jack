@@ -1,0 +1,48 @@
+class Random {
+    
+    // Static field to hold the internal state (seed) of the generator.
+    static int seed; 
+    
+    // Constants for the LCG algorithm (Multiplier 'a' and Increment 'c').
+    static int multiplier; 
+    static int increment;  
+
+    /** Function: Initializes the random number generator. 
+     * Must be called once before any call to getRandom.
+     */
+    function void init() {
+        // Initializes the seed to an arbitrary starting value.
+        // In a real application, this value might be based on clock time or user input.
+        let seed = 1; 
+        
+        // Setting common LCG constants (based on a standard PRNG).
+        let multiplier = 22695; 
+        let increment = 1;      
+        return;
+    }
+    
+    /** Function: Returns a pseudo-random integer in the range [0, max - 1].
+     * @param max: The exclusive upper bound of the desired range.
+     * @return: A random integer between 0 and max - 1.
+     */
+    function int getRandom(int max) {
+        var int newSeed;
+        var int absoluteSeed;
+        var int remainder;
+        
+        // 1. Calculate the new seed: seed = (a * seed + c) 
+        // We rely on the hardware to handle the 16-bit overflow (the implicit modulus).
+        let newSeed = multiplier * seed + increment;
+        let seed = newSeed; // Update the static seed for the next call
+        
+        // 2. Take the absolute value to ensure positivity (Hack's integers are signed).
+        // The Math OS class is used for the absolute function.
+        let absoluteSeed = Math.abs(seed);
+
+        // 3. Calculate the remainder (Modulo operation): result = absoluteSeed % max
+        // Jack doesn't have a direct modulo operator (%), so we use: x mod m = x - (x / m) * m
+        let remainder = absoluteSeed - (absoluteSeed / max) * max;
+        
+        return remainder;
+    }
+}

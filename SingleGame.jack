@@ -1,0 +1,91 @@
+
+//*The primary purpose of the SingleGame class is to manage all the logic
+ //and interaction that occurs within one single round of Rock, Paper, Scissors./*
+
+
+//It focuses strictly on the current round's events 
+//(input, computer choice, and winner determination) and does
+//* not track the cumulative score—that responsibility belongs to the Game class.
+
+
+class SingleGame{
+
+
+    field int userChoice;
+    field int computerChoice;
+    field Graphic gameGraphic;
+    static int UserSide; // static variables
+    static int CompSide;
+    //field Random randseed;
+    
+    /** Constructor: Initializes the SingleGame instance and sets up the constants. */
+    constructor SingleGame new(Graphic Graphic) {
+        let gameGraphic = Graphic;
+        let UserSide = 1; // 
+        let CompSide = 2; //
+        //let randSeed = 100; 
+        return this;
+    }
+    method int getUserChoiceInput() {
+        // get choised of the user using the KB
+        var char inputChar;
+        var int choice;
+
+        do Output.printString("Enter choice (1=Rock, 2=Paper, 3=Scissors): ");
+        let inputChar = Keyboard.readChar();
+        let choice = inputChar - 48; // in ASCII '1' is 49 for example
+
+        if ((choice>3)|(choice<1)) {
+            do Output.printString("Invalid input please try again");
+            return -1;
+        }
+        return choice;
+    }
+
+    method int GameResult () {
+        //for  user win it will return 1 for draw 0 and for CP win -1 
+        var int result;
+
+        //the choice of each one of the players
+        let userChoice = getUserChoiceInput();
+        if (userChoice = -1)  { return 99; } // if the value is illegal
+        let computerChoice = Random.getRandom(3);  //choose randomly from 1-3 RPS
+
+        //draw
+        if (userChoice = computerChoice) {
+            do gameGraphic.drawHand(userChoice, UserSide); 
+            do gameGraphic.drawHand(computerChoice, CompSide);
+            return 0; // Draw
+        }
+
+        // Computer Win
+        if ((userChoice = 1) & (computerChoice = 2)) {
+            do gameGraphic.drawHand(userChoice, UserSide); 
+            do gameGraphic.drawHand(computerChoice, CompSide);
+            return -1;
+        } 
+        if ((userChoice = 2) & (computerChoice = 3)) {
+            do gameGraphic.drawHand(userChoice, UserSide); 
+            do gameGraphic.drawHand(computerChoice, CompSide);
+            return -1;
+        } 
+        if ((userChoice = 3) & (computerChoice = 1)) {
+            do gameGraphic.drawHand(userChoice, UserSide); 
+            do gameGraphic.drawHand(computerChoice, CompSide);
+            return -1;
+        } 
+
+        // User Win - the only possible cases//bdvfv
+        else {
+            do gameGraphic.drawHand(userChoice, UserSide); 
+            do gameGraphic.drawHand(computerChoice, CompSide);
+            return 1; // User Win
+        }
+
+        }    
+
+        }
+
+    //}
+
+//}
