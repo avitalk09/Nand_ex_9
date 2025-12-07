@@ -40,7 +40,7 @@ class SingleGame{
 
         do Output.printString("Enter choice (1=Rock, 2=Paper, 3=Scissors): ");
         let inputChar = Keyboard.readChar();
-        let choice = inputChar - 48; // in ASCII '1' is 49 for example
+        let choice = (inputChar + 0) - 48; // in ASCII '1' is 49 for example (convert to int to subsctarct)
 
         if ((choice>3)|(choice<1)) {
             do Output.printString("Invalid input please try again");
