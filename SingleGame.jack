@@ -65,27 +65,22 @@ class SingleGame{
             return 0; // Draw
         }
 
+        do gameGraphic.drawHand(userChoice, UserSide); 
+        do gameGraphic.drawHand(computerChoice, CompSide);
+
         // Computer Win
         if ((userChoice = 1) & (computerChoice = 2)) {
-            do gameGraphic.drawHand(userChoice, UserSide); 
-            do gameGraphic.drawHand(computerChoice, CompSide);
             return -1;
         } 
         if ((userChoice = 2) & (computerChoice = 3)) {
-            do gameGraphic.drawHand(userChoice, UserSide); 
-            do gameGraphic.drawHand(computerChoice, CompSide);
             return -1;
         } 
         if ((userChoice = 3) & (computerChoice = 1)) {
-            do gameGraphic.drawHand(userChoice, UserSide); 
-            do gameGraphic.drawHand(computerChoice, CompSide);
             return -1;
         } 
 
         // User Win - the only possible cases//bdvfv
         else {
-            do gameGraphic.drawHand(userChoice, UserSide); 
-            do gameGraphic.drawHand(computerChoice, CompSide);
             return 1; // User Win
         }
 
