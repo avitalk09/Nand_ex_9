@@ -8,7 +8,7 @@ class RPSGame {
     field Graphic GameGraphic;
     field SingleGame singleGame;
 
-    field int KEY_Q;  // ASCII 81nv vagah,   changed from static 
+    static int KEY_Q;  // ASCII 81nv vagah
 
     constructor RPSGame new(Graphic Graphic ){
         let UserScore = 0;
