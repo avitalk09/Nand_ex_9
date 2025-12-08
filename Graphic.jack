@@ -304,29 +304,7 @@ function void drawHeart(int location) {
 	do Memory.poke(memAddress+480, 128);
 	return;
 }
-function void drawHeartInverted(int location) {
-    var int memAddress;
-    let memAddress = 16384 + location;
 
-    do Memory.poke(memAddress+0, 65535);   // ~0 & 0xFFFF = all white
-    do Memory.poke(memAddress+32, 65535);
-    do Memory.poke(memAddress+64, 65535);
-    do Memory.poke(memAddress+96, 57895);  // 7740 inverted: 65535-7740 = 57895
-    do Memory.poke(memAddress+128, 57021); // 8514 -> 65535-8514 = 57021
-    do Memory.poke(memAddress+160, 49000); // 16537 -> 65535-16537 = 49000
-    do Memory.poke(memAddress+192, 49138); // 16397 -> 65535-16397 = 49138
-    do Memory.poke(memAddress+224, 49146); // 16389 -> 65535-16389 = 49146
-    do Memory.poke(memAddress+256, 49150); // 16385 -> 65535-16385 = 49150
-    do Memory.poke(memAddress+288, 57341); // 8194 -> 65535-8194 = 57341
-    do Memory.poke(memAddress+320, 61435); // 4100 -> 65535-4100 = 61435
-    do Memory.poke(memAddress+352, 63479); // 2056 -> 65535-2056 = 63479
-    do Memory.poke(memAddress+384, 64495); // 1040 -> 65535-1040 = 64495
-    do Memory.poke(memAddress+416, 65091); // 544 -> 65535-544 = 65091
-    do Memory.poke(memAddress+448, 65215); // 320 -> 65535-320 = 65215
-    do Memory.poke(memAddress+480, 65407); // 128 -> 65535-128 = 65407
-
-    return;
-}
 
 // functions used by RPSgame to render the winning board
 method void UserWon() { 

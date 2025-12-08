@@ -8,7 +8,7 @@ class RPSGame {
     field Graphic GameGraphic;
     field SingleGame singleGame;
 
-    static int KEY_Q;  // ASCII 81nv vagah
+    static char KEY_Q;  // ASCII 81nv vagah
 
     constructor RPSGame new(Graphic Graphic ){
         let UserScore = 0;
@@ -77,11 +77,11 @@ class RPSGame {
 
     if (round_result = 1) { 
         let UserScore = UserScore + 1;
-        do GameGraphic.Plus1User(); 
+        do GameGraphic.Plus1User(UserScore); 
     }
     if (round_result = -1) { 
         let ComputerScore = ComputerScore + 1;
-        do GameGraphic.Plus1Computer(); 
+        do GameGraphic.Plus1Computer(UserScore); 
     }
     do Sys.wait(888);
     return;
@@ -93,11 +93,9 @@ class RPSGame {
         if(UserScore = 3){ do GameGraphic.UserWon();}
         else  { do GameGraphic.ComputerWon(); }
 
-        do ys.wait(3500);
+        do Sys.wait(3500);
         return;
     }
-
-
 
 
  
