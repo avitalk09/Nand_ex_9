@@ -331,7 +331,7 @@ method void UserWon() {
     do Output.printString("             |_|\___/ \__,_|   \_/\_/ |_|_| |_| (_)");
     do Output.println();
     do Output.println();
-    do Output.printString("                       “Legendary!” ");    
+    do Output.printString("                       \"Legendary!\" ");    
     return; 
     }
 
