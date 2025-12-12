@@ -1,4 +1,4 @@
-class main {
+class Main {
     // attributes and methods
 
     function void main() {
