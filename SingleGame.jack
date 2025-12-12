@@ -19,10 +19,10 @@ class SingleGame{
     //field Random randseed;
     
     /** Constructor: Initializes the SingleGame instance and sets up the constants. */
-    constructor SingleGame new(Graphic Graphic) {
-        let gameGraphic = Graphic;
-        let SingleGame.UserSide = 1;   // user on the left
-        let SingleGame.CompSide = 2;   // computer on the right
+    constructor SingleGame new(Graphic graphic) {
+        let gameGraphic = graphic;
+        let UserSide = 1;   // user on the left
+        let CompSide = 2;   // computer on the right
         //let randSeed = 100; 
         return this;
     }
