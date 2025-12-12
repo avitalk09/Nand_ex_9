@@ -58,15 +58,13 @@ class SingleGame{
         //if (userChoice = -1)  { return 99; } // if the value is illegal
         let computerChoice = Random.getRandom(3);  //choose randomly from 1-3 RPS
 
-        //draw
-        if (userChoice = computerChoice) {
-            do gameGraphic.drawHand(userChoice, UserSide); 
-            do gameGraphic.drawHand(computerChoice, CompSide);
-            return 0; // Draw
-        }
-
         do gameGraphic.drawHand(userChoice, UserSide); 
         do gameGraphic.drawHand(computerChoice, CompSide);
+
+        //draw
+        if (userChoice = computerChoice) {
+            return 0; // Draw
+        }
 
         // Computer Win
         if ((userChoice = 1) & (computerChoice = 2)) {
