@@ -315,11 +315,6 @@ method void UserWon() {
     do Screen.drawRectangle(0,0,511,255);
     do Output.println();
     do Output.println();
-    do Output.println();
-    do Output.println();
-    do Output.println();
-    do Output.println();
-    do Output.println();
     do Output.printString("          __     __                    _         _");
     do Output.println();
     do Output.printString("          \ \   / /                   (_)       | |");
@@ -343,11 +338,6 @@ method void ComputerWon() {
     //esrase the scrren first 
     do Screen.setColor(false);
     do Screen.drawRectangle(0,0,511,255);
-    do Output.println();
-    do Output.println();
-    do Output.println();
-    do Output.println();
-    do Output.println();
     do Output.println();
     do Output.println();
     do Output.printString("             __     __           _           _   ");
