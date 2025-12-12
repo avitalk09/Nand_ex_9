@@ -54,8 +54,8 @@ class SingleGame{
         var int result;
 
         //the choice of each one of the players
-        //let userChoice = getUserChoiceInput();
-        //if (userChoice = -1)  { return 99; } // if the value is illegal
+        let userChoice = getUserChoiceInput();
+        if (userChoice = -1)  { return 99; } // if the value is illegal
         let computerChoice = Random.getRandom(3);  //choose randomly from 1-3 RPS
 
         do gameGraphic.drawHand(userChoice, UserSide); 
