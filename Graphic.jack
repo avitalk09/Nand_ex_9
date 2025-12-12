@@ -2,13 +2,15 @@
 
 class Graphic {
 
-// function - doesn't use fields (kind of like static, doesn't depend on the instance), methods - else
+field int test;
 
 // constructore and destructor
 constructor Graphic new(){
     // Blackout the screen 
     do Screen.setColor(false); 
     do Screen.drawRectangle(0,0,511,255);
+	// test
+	let test =0;
     return this;
 }
 
