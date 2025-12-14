@@ -14,15 +14,15 @@ class SingleGame{
     field int userChoice;
     field int computerChoice;
     field Graphic gameGraphic;
-    static int UserSide; // static variables
-    static int CompSide;
+    static int UserSide = 1; // static variables
+    static int CompSide = 2;  // computer on the right user on the left 
     //field Random randseed;
     
     /** Constructor: Initializes the SingleGame instance and sets up the constants. */
     constructor SingleGame new(Graphic graphic) {
         let gameGraphic = graphic;
-        let UserSide = 1;   // user on the left
-        let CompSide = 2;   // computer on the right
+        //let UserSide = 1;   // user on the left
+        //let CompSide = 2;   // computer on the right comented to check if this was the pb
         //let randSeed = 100; 
         return this;
     }
