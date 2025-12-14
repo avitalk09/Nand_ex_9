@@ -37,7 +37,7 @@ class RPSGame {
         let key = 0; //default situation
 
         while (~exitGame) {
-            
+            do Screen.clearScreen();
             while(key=0){
                 //check if something was pressed
                 let key = Keyboard.keyPressed();
