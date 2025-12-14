@@ -89,12 +89,8 @@ class RPSGame {
 
     method void AnnounceWinner(){
 
-        // if(UserScore = 3){ do GameGraphic.UserWon();}
-        // else  { do GameGraphic.ComputerWon(); }
-
-        if(UserScore > ComputerScore){
-            do GameGraphic.UserWon();
-        }else{ do GameGraphic.ComputerWon();}
+        if(UserScore = 3){ do GameGraphic.UserWon();}
+        else  { do GameGraphic.ComputerWon(); }
         do Sys.wait(3500);
         return;
     }
