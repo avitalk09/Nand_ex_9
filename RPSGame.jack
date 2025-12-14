@@ -81,7 +81,7 @@ class RPSGame {
     }
     if (round_result = -1) { 
         let ComputerScore = ComputerScore + 1;
-        do GameGraphic.Plus1Computer(UserScore); 
+        do GameGraphic.Plus1Computer(ComputerScore); 
     }
     do Sys.wait(888);
     return;
