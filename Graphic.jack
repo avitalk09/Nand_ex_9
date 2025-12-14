@@ -257,10 +257,13 @@ method void Plus1User(int userScore) {
     } 
     else{
         if(userScore = 2){
+			do Graphic.drawHeart(6082);
             do Graphic.drawHeart(6084);
 
         }
         else{
+			do Graphic.drawHeart(6082);
+            do Graphic.drawHeart(6084);
             do Graphic.drawHeart(6086);     
 
         }
@@ -274,9 +277,12 @@ method void Plus1Computer(int compScore) {
     }
     else{
         if(compScore = 2){
+			do Graphic.drawHeart(6109);
             do Graphic.drawHeart(6107);
         }
         else{
+			do Graphic.drawHeart(6109);
+            do Graphic.drawHeart(6107);
             do Graphic.drawHeart(6105);
 
         }
