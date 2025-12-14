@@ -21,8 +21,8 @@ class SingleGame{
     /** Constructor: Initializes the SingleGame instance and sets up the constants. */
     constructor SingleGame new(Graphic graphic) {
         let gameGraphic = graphic;
-        let SingleGame.UserSide = 1;   // user on the left
-        let SingleGame.CompSide = 2;   // computer on the right comented to check if this was the pb
+        let this.UserSide = 1;   // user on the left
+        let this.CompSide = 2;   // computer on the right comented to check if this was the pb
         //let randSeed = 100; 
         return this;
     }
