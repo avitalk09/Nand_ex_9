@@ -90,7 +90,4 @@ class RPSGame {
         do Sys.wait(3500);
         return;
     }
-
-
- 
 }

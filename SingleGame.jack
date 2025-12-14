@@ -1,10 +1,10 @@
 
-//*The primary purpose of the SingleGame class is to manage all the logic
- //and interaction that occurs within one single round of Rock, Paper, Scissors./*
+//* The primary purpose of the SingleGame class is to manage all the logic
+// and interaction that occurs within one single round of Rock, Paper, Scissors. /*
 
 
-//It focuses strictly on the current round's events 
-//(input, computer choice, and winner determination) and does
+// It focuses strictly on the current round's events 
+// (input, computer choice, and winner determination) and does
 //* not track the cumulative score—that responsibility belongs to the Game class.
 
 
@@ -21,7 +21,7 @@ class SingleGame{
     constructor SingleGame new(Graphic graphic) {
         let gameGraphic = graphic;
         let UserSide = 1;   // user on the left
-        let CompSide = 2;
+        let CompSide = 2;   
         return this;
     }
 
