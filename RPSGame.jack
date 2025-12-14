@@ -16,18 +16,16 @@ class RPSGame {
         let GameGraphic = Graphic;
         let singleGame = SingleGame.new(Graphic);
         return this;
-
-
     }
+
     method void dispose () {
         do GameGraphic.dispose();
         do singleGame.dispose();
         do Memory.deAlloc(this);
         return;
     }
-    //complete the round until someone get to 3 points
-  
 
+    //complete the round until someone get to 3 points
     method void run() {
         var char key;
         var boolean exitGame;
@@ -68,27 +66,25 @@ class RPSGame {
 
     method void HandleRPSInput(char keyPressed) {
 
-    var int round_result;
+        var int round_result;
 
-    if ((UserScore = 3) | (ComputerScore = 3)) { return; } // the game is already over
+        if ((UserScore = 3) | (ComputerScore = 3)) { return; } // the game is already over
 
-    let round_result = singleGame.GameResult(keyPressed - 48); ///////////////////////////////////////////////////////////////////////////
+        let round_result = singleGame.GameResult(keyPressed - 48); ///////////////////////////////////////////////////////////////////////////
 
-    if (round_result = 1) { 
-        let UserScore = UserScore + 1;
-        do GameGraphic.Plus1User(UserScore); 
-    }
-    if (round_result = -1) { 
-        let ComputerScore = ComputerScore + 1;
-        do GameGraphic.Plus1Computer(ComputerScore); 
-    }
-    do Sys.wait(888);
-    return;
-
+        if (round_result = 1) { 
+            let UserScore = UserScore + 1;
+            do GameGraphic.Plus1User(UserScore); 
+        }
+        if (round_result = -1) { 
+            let ComputerScore = ComputerScore + 1;
+            do GameGraphic.Plus1Computer(ComputerScore); 
+        }
+        do Sys.wait(888);
+        return;
     }
 
     method void AnnounceWinner(){
-
         if(UserScore = 3){ do GameGraphic.UserWon();}
         else  { do GameGraphic.ComputerWon(); }
         do Sys.wait(3500);

@@ -6,18 +6,17 @@ field int test;
 
 // constructore and destructor
 constructor Graphic new(){
-    // Blackout the screen 
+    // whipe the screen 
     do Screen.setColor(false); 
     do Screen.drawRectangle(0,0,511,255);
 	// test
-	let test =0;
+	let test = 0;
     return this;
 }
 
 method void dispose () {
     do Memory.deAlloc(this);
     return;
-
 }    
 
 // function used by single game, to render the choices
@@ -289,7 +288,6 @@ method void Plus1Computer(int compScore) {
     return; 
 }
 
-// TODO: decide which to use adapt the color of hands and screen base on that 
 function void drawHeart(int location) {
     var int memAddress;
 	let memAddress = 16384+location; 
@@ -311,7 +309,6 @@ function void drawHeart(int location) {
 	do Memory.poke(memAddress+480, 128);
 	return;
 }
-
 
 // functions used by RPSgame to render the winning board
 method void UserWon() { 
@@ -336,8 +333,6 @@ method void UserWon() {
     do Output.printString("                       \"Legendary!\" ");    
     return; 
     }
-
-
 method void ComputerWon() { 
     //esrase the scrren first 
     //esrase the scrren first 
