@@ -21,8 +21,7 @@ class SingleGame{
     constructor SingleGame new(Graphic graphic) {
         let gameGraphic = graphic;
         let UserSide = 1;   // user on the left
-        let CompSide = 2;   // computer on the right comented to check if this was the pb
-        //let randSeed = 100; 
+        let CompSide = 2;
         return this;
     }
 
