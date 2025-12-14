@@ -41,7 +41,7 @@ method void drawHand (int userChoice,int UserSide) {
 
         }
     }
-    else{ // else means computer 
+    if (UserSide = 2){ 
         if(userChoice = 1){
             do Graphic.rockRight();
         } 
@@ -54,7 +54,6 @@ method void drawHand (int userChoice,int UserSide) {
                     do Graphic.scissorRight();
                 }
             }
-
         }
     }
     return;
@@ -367,11 +366,6 @@ method void DrawRender(){
     do Screen.setColor(false);
     do Screen.drawRectangle(0,0,511,255);
     do Output.println();
-    do Output.println();
-    do Output.println();
-    do Output.println();
-    do Output.println();
-    do Output.println();
     do Output.printString("         _ _     _                   _     ");
     do Output.println();
     do Output.printString("        (_) |   ( )                 | |    ");
@@ -385,8 +379,7 @@ method void DrawRender(){
     do Output.printString("        |_|\__|   |___/  \__,_|  \__,_|_|  \__,_| \_/\_/");
     do Output.println();
     do Output.println();
-    do Output.printString("                  better luck next time ");      
-                                                
+    do Output.printString("                  better luck next time ");                                             
     return;
     }
 
